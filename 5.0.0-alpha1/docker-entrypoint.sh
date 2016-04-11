@@ -2,7 +2,7 @@
 
 set -e
 
-CONFIG=/filebeat.yml
+CONFIG=/bin/filebeat/filebeat.yml
 
 while [[ $# > 1 ]]
 do

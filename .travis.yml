@@ -15,7 +15,7 @@ install:
 before_script:
   - env | sort
   - cd "$VERSION"
-  - image="appropriate/filebeat:$VERSION"
+  - image="willfarrell/filebeat:$VERSION"
 
 script:
   - docker build --pull -t "$image" .
