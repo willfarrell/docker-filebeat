@@ -2,8 +2,8 @@ FROM debian:jessie
 
 MAINTAINER will Farrell <will.farrell@gmail.com>
 
-ENV FILEBEAT_VERSION=%%FILEBEAT_VERSION%% \
-    FILEBEAT_SHA1=%%FILEBEAT_SHA1%%
+ENV FILEBEAT_VERSION=1.1.2 \
+    FILEBEAT_SHA1=7bc318ad2f770063335cbf0898c273fee2261062
 
 RUN set -x && \
   apt-get update && \

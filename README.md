@@ -9,7 +9,8 @@ Get ready for the next-generation Logstash Forwarder: Filebeat. Filebeat collect
 ## Supported tags and Dockerfile links
 
 -	[`1.0.1`, `1.0` (*Dockerfile*)](https://github.com/willfarrell/docker-filebeat/blob/master/1.1.1/Dockerfile)
--	[`1.1.1`, `1.1` (*Dockerfile*)](https://github.com/willfarrell/docker-filebeat/blob/master/1.1.1/Dockerfile)
+-	[`1.1.1` (*Dockerfile*)](https://github.com/willfarrell/docker-filebeat/blob/master/1.1.1/Dockerfile)
+-	[`1.1.2`, `1.1` (*Dockerfile*)](https://github.com/willfarrell/docker-filebeat/blob/master/1.1.1/Dockerfile)
 -	[`1.2.1`, `1.2`, `1`, `latest` (*Dockerfile*)](https://github.com/willfarrell/docker-filebeat/blob/master/1.2.1/Dockerfile)
 -	[`5.0.0-alpha1`, `5.0`, `5` (*Dockerfile*)](https://github.com/willfarrell/docker-filebeat/blob/master/5.0.0-alpha/Dockerfile)
 
