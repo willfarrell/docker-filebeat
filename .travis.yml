@@ -1,4 +1,5 @@
----
+sudo: required
+
 language: bash
 
 dist: trusty
@@ -8,6 +9,9 @@ env:
   - VERSION=1.1.1
   - VERSION=1.2.1
   - VERSION=5.0.0-alpha1
+
+services:
+  - docker
 
 install:
   - git clone https://github.com/docker-library/official-images.git ~/official-images
@@ -19,4 +23,5 @@ before_script:
 
 script:
   - docker build --pull -t "$image" .
-  - ~/official-images/test/run.sh -c ~/official-images/test/config.sh "$image"
+  - docker run -d "$image"
+  - docker ps | grep "$image" | awk '{print $1}' || { exit 1; }
