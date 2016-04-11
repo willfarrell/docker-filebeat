@@ -1,0 +1,19 @@
+---
+language: bash
+
+dist: trusty
+
+env:
+  - VERSION=5.0.0-alpha
+
+install:
+  - git clone https://github.com/docker-library/official-images.git ~/official-images
+
+before_script:
+  - env | sort
+  - cd "$VERSION"
+  - image="appropriate/filebeat:$VERSION"
+
+script:
+  - docker build --pull -t "$image" .
+  - ~/official-images/test/run.sh -c ~/official-images/test/config.sh "$image"
