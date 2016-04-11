@@ -2,7 +2,8 @@
 
 set -e
 
-CONFIG=/opt/filebeat.yml
+CONFIG=""
+COMMAND="$@"
 
 while [[ $# > 1 ]]
 do
@@ -14,11 +15,15 @@ case $key in
     	shift # past argument
     ;;
     *)
-            # unknown option
+	# other or unknown option
     ;;
 esac
 shift # past argument or value
 done
+
+if [ "$CONFIG" = '' ]; then
+	CONFIG=/filebeat.yml
+fi
 
 # Add filebeat as command if needed
 if [ "${1:0:1}" = '-' ]; then
