@@ -14,12 +14,13 @@ RUN set -x && \
   tar xzvf filebeat.tar.gz && \
   cd filebeat-* && \
   cp filebeat /bin && \
+  cp filebeat.yml /opt/filebeat.yml && \
   cd /opt && \
   rm -rf filebeat* && \
   apt-get purge -y wget && \
   apt-get autoremove -y && \
   apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
+RUN ls /etc/filebeat
 COPY docker-entrypoint.sh /
 ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD [ "filebeat", "-e" ]
