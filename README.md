@@ -10,7 +10,7 @@ Get ready for the next-generation Logstash Forwarder: Filebeat. Filebeat collect
 -	[`1.0.1`, `1.0` (*Dockerfile*)](https://github.com/willfarrell/docker-filebeat/blob/master/1.1.1/Dockerfile)
 -	[`1.1.1`, `1.1` (*Dockerfile*)](https://github.com/willfarrell/docker-filebeat/blob/master/1.1.1/Dockerfile)
 -	[`1.2.1`, `1.2`, `1`, `latest` (*Dockerfile*)](https://github.com/willfarrell/docker-filebeat/blob/master/1.2.1/Dockerfile)
--	[`5.0.0-alpha` (*Dockerfile*)](https://github.com/willfarrell/docker-filebeat/blob/master/5.0.0-alpha/Dockerfile)
+-	[`5.0.0-alpha1` (*Dockerfile*)](https://github.com/willfarrell/docker-filebeat/blob/master/5.0.0-alpha/Dockerfile)
 
 ## Run Examples
 
@@ -18,7 +18,7 @@ Get ready for the next-generation Logstash Forwarder: Filebeat. Filebeat collect
 ```
 docker run \
 	-v /path/to/filebeat.yml:/etc/filebeat/filebeat.yml \
-	willfarrell/filebeat:5.0.0-alpha \
+	willfarrell/filebeat:5.0.0-alpha1 \
 	-c /etc/filebeat/filebeat.yml
 ```
 
