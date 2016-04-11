@@ -27,8 +27,8 @@ docker run \
 ### Dockerfile
 
 ```Dockerfile
-FROM willfarrell/filebeat
-COPY filebeat/config/ /etc/filebeat/
+FROM willfarrell/filebeat:1
+COPY config/filebeat.yml /filebeat.yml
 ```
 
 ### docker-compose
@@ -38,13 +38,13 @@ version "2"
 
 services:
   filebeat:
-    image: willfarrell/filebeat:5.0.0-alpha
-    command: "filebeat /etc/filebeat/filebeat.yml"
+    image: willfarrell/filebeat:1
+    command: "filebeat -e -c /etc/filebeat/filebeat.yml"
     environment:
       LOGSTASH_HOST: "192.168.99.100"
       LOGSTASH_PORT: "5044"
     volumes:
-     - "./filebeat:/etc/filebeat:ro"
+     - "./filebeat.yml:/etc/filebeat/filebeat.yml:ro"
      - "./logs/nginx:/var/log/nginx:ro"
      - "./logs/node:/var/log/node:ro"
      - "./logs/postgres:/var/log/postgres:ro"
