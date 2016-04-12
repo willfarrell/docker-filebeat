@@ -28,7 +28,7 @@ docker run \
 
 ```Dockerfile
 FROM willfarrell/filebeat:1
-COPY config/filebeat.yml /filebeat.yml
+COPY filebeat.yml /filebeat.yml
 ```
 
 ### docker-compose
@@ -44,10 +44,6 @@ services:
       LOGSTASH_HOST: "192.168.99.100"
       LOGSTASH_PORT: "5044"
     volumes:
-     - "./filebeat.yml:/etc/filebeat/filebeat.yml:ro"
-     - "./logs/nginx:/var/log/nginx:ro"
-     - "./logs/node:/var/log/node:ro"
-     - "./logs/postgres:/var/log/postgres:ro"
-     - "./logs/redis:/var/log/redis:ro"
+     - "./filebeat.yml:/etc/filebeat/filebeat.yml:rw"
 
 ```
