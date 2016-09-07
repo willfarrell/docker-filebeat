@@ -11,7 +11,8 @@ Get ready for the next-generation Logstash Forwarder: Filebeat. Filebeat collect
 -	[`1.0.1`, `1.0` (*Dockerfile*)](https://github.com/willfarrell/docker-filebeat/blob/master/1.1.1/Dockerfile)
 -	[`1.1.1` (*Dockerfile*)](https://github.com/willfarrell/docker-filebeat/blob/master/1.1.1/Dockerfile)
 -	[`1.1.2`, `1.1` (*Dockerfile*)](https://github.com/willfarrell/docker-filebeat/blob/master/1.1.1/Dockerfile)
--	[`1.2.3`, `1.2`, `1`, `latest` (*Dockerfile*)](https://github.com/willfarrell/docker-filebeat/blob/master/1.2.3/Dockerfile)
+-	[`1.2.3`, `1.2` (*Dockerfile*)](https://github.com/willfarrell/docker-filebeat/blob/master/1.2.3/Dockerfile)
+-	[`1.3.0`, `1.3`, `1`, `latest` (*Dockerfile*)](https://github.com/willfarrell/docker-filebeat/blob/master/1.3.0/Dockerfile)
 -	[`5.0.0-alpha5`, `5.0`, `5` (*Dockerfile*)](https://github.com/willfarrell/docker-filebeat/blob/master/5.0.0-alpha5/Dockerfile)
 
 ## Run Examples
