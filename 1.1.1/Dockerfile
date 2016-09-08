@@ -1,6 +1,6 @@
-FROM debian:jessie
+# MAINTAINER @willfarrell
 
-MAINTAINER will Farrell <will.farrell@gmail.com>
+FROM debian:jessie
 
 ENV FILEBEAT_VERSION=1.1.1 \
     FILEBEAT_SHA1=05f99d2f61fee1608d01f583a2d0737a53bbd4b5
