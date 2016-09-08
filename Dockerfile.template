@@ -1,6 +1,6 @@
-FROM debian:jessie
+# MAINTAINER @willfarrell
 
-MAINTAINER will Farrell <will.farrell@gmail.com>
+FROM debian:jessie
 
 ENV FILEBEAT_VERSION=%%FILEBEAT_VERSION%% \
     FILEBEAT_SHA1=%%FILEBEAT_SHA1%%
