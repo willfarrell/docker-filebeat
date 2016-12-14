@@ -8,7 +8,7 @@ ENV FILEBEAT_VERSION=5.0.0 \
 RUN set -x && \
   apt-get update && \
   apt-get install -y wget && \
-  wget https://download.elastic.co/beats/filebeat/filebeat-${FILEBEAT_VERSION}-linux-x86_64.tar.gz -O /opt/filebeat.tar.gz && \
+  wget https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-${FILEBEAT_VERSION}-linux-x86_64.tar.gz -O /opt/filebeat.tar.gz && \
   cd /opt && \
   echo "${FILEBEAT_SHA1}  filebeat.tar.gz" | sha1sum -c - && \
   tar xzvf filebeat.tar.gz && \
