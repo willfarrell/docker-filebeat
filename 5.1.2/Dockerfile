@@ -14,7 +14,7 @@ RUN set -x && \
   && tar xzvf filebeat.tar.gz \
   && cd filebeat-* \
   && cp filebeat /bin \
-  && cp filebeat.yml /filebeat.yml \
+  && cp filebeat.yml /etc/filebeat/filebeat.yml.sample \
   && cd /tmp \
   && rm -rf filebeat* \
   && apk del .build-deps \
