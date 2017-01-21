@@ -8,11 +8,12 @@ Get ready for the next-generation Logstash Forwarder: Filebeat. Filebeat collect
 
 ## Supported tags and Dockerfile links
 
--	[`5.1.2`, `5.1`, `5` (*Dockerfile*)](https://github.com/willfarrell/docker-filebeat/blob/master/5.1.2/Dockerfile)
+-	[`5.1.2`, `5.1`, `5`, `latest` (*Dockerfile*)](https://github.com/willfarrell/docker-filebeat/blob/master/5.1.2/Dockerfile)
 
--	[`1.3.0`, `1.3`, `1`, `latest`  (*Dockerfile*)](https://github.com/willfarrell/docker-filebeat/blob/master/1.3.0/Dockerfile)
+-	[`1.3.0`, `1.3`, `1` (*Dockerfile*)](https://github.com/willfarrell/docker-filebeat/blob/master/1.3.0/Dockerfile)
 -	[`1.2.3`, `1.2` (*Dockerfile*)](https://github.com/willfarrell/docker-filebeat/blob/master/1.2.3/Dockerfile)
 -	[`1.1.2`, `1.1` (*Dockerfile*)](https://github.com/willfarrell/docker-filebeat/blob/master/1.1.2/Dockerfile)
+-	[`1.0.1`, `1.0` (*Dockerfile*)](https://github.com/willfarrell/docker-filebeat/blob/master/1.0.1/Dockerfile)
 
 
 [![](https://images.microbadger.com/badges/version/willfarrell/filebeat.svg)](http://microbadger.com/images/willfarrell/filebeat "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/image/willfarrell/filebeat.svg)](http://microbadger.com/images/willfarrell/filebeat "Get your own image badge on microbadger.com")
