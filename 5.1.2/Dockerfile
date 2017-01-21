@@ -1,5 +1,4 @@
 # MAINTAINER @willfarrell
-
 FROM library/alpine:3.5
 
 ENV FILEBEAT_VERSION=5.1.2 \
@@ -14,7 +13,7 @@ RUN set -x && \
   && tar xzvf filebeat.tar.gz \
   && cd filebeat-* \
   && cp filebeat /bin \
-  && cp filebeat.yml /etc/filebeat/filebeat.yml.sample \
+  #&& cp filebeat.yml /filebeat.yml \
   && cd /tmp \
   && rm -rf filebeat* \
   && apk del .build-deps \
