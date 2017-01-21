@@ -1,8 +1,9 @@
 # MAINTAINER @willfarrell
+
 FROM library/alpine:3.5
 
-ENV FILEBEAT_VERSION=%%FILEBEAT_VERSION%% \
-    FILEBEAT_SHA1=%%FILEBEAT_SHA1%%
+ENV FILEBEAT_VERSION=5.1.2 \
+    FILEBEAT_SHA1=0b0a44bc0daf2c597dd3ee2b32120fc487f7472d
 
 RUN set -x && \
   apk add --no-cache --virtual .build-deps ca-certificates wget \
