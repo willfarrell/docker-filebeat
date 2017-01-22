@@ -24,8 +24,7 @@ Get ready for the next-generation Logstash Forwarder: Filebeat. Filebeat collect
 ```
 docker run \
 	-v /path/to/filebeat.yml:/etc/filebeat/filebeat.yml \
-	willfarrell/filebeat:5.0.0-alpha1 \
-	-c /etc/filebeat/filebeat.yml
+	willfarrell/filebeat:5
 ```
 
 ### Dockerfile

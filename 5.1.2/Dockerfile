@@ -13,12 +13,10 @@ RUN set -x && \
   && tar xzvf filebeat.tar.gz \
   && cd filebeat-* \
   && cp filebeat /bin \
-  #&& cp filebeat.yml /filebeat.yml \
+  #&& mkdir -p /etc/filebeat \
+  #&& cp filebeat.yml /etc/filebeat/filebeat.yml \
   && cd /tmp \
   && rm -rf filebeat* \
-  && apk del .build-deps \
-  && apk add --no-cache --virtual .run-deps bash
+  && apk del .build-deps
 
-COPY docker-entrypoint.sh /
-ENTRYPOINT ["/docker-entrypoint.sh"]
-CMD [ "filebeat", "-e" ]
+CMD [ "filebeat", "-e", "-c", "/etc/filebeat/filebeat.yml"]
