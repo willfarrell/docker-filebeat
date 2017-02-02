@@ -1,0 +1,11 @@
+filebeat:
+  prospectors:
+    - input_type: "stdin"
+      document_type: "filebeat-docker-logs"
+
+output:
+  console:
+    pretty: true
+  logstash:
+    hosts: ["${LOGSTASH_HOST:logstash}:${LOGSTASH_PORT:5044}"]
+    index: filebeat
