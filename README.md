@@ -47,7 +47,7 @@ COPY filebeat.yml /filebeat.yml
 ### docker-compose
 
 ```yml
-version "2"
+version "3"
 
 services:
   filebeat:
@@ -91,7 +91,7 @@ COPY filebeat.yml /filebeat.yml
 ### docker-compose
 
 ```yml
-version "2"
+version "3"
 
 services:
   filebeat:
