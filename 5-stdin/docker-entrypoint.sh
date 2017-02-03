@@ -29,10 +29,20 @@ if [ "$1" = 'filebeat' ] && [ -e ${DOCKER_SOCK} ]; then
   cat $PIPE_DIR | exec "$@" &
 
   echo "Monitor Containers ..."
+
+  # Set container selector
+  if [ "$STDIN_CONTAINER_LABEL" == "all" ]; then
+    selector() {
+      jq -r .[].Id
+    }
+  else
+    selector() {
+      jq -r '.[] | select(.Labels["'${STDIN_CONTAINER_LABEL:=filebeat.stdin}'"] == "true") | .Id'
+    }
+  fi
+
   while true; do
-    # TODO filter what containers get logging
-    # @gdubya | jq -r '.[] | select(.Labels["filebeat.stdin"] == "true") | .Id'
-    CONTAINERS=$(curl --no-buffer -s -XGET --unix-socket ${DOCKER_SOCK} http://localhost/containers/json | jq -r .[].Id)
+    CONTAINERS=$(curl --no-buffer -s -XGET --unix-socket ${DOCKER_SOCK} http://localhost/containers/json | selector)
     for CONTAINER in $CONTAINERS; do
       if ! ls $CONTAINERS_DIR | grep -q $CONTAINER; then
         processLogs $CONTAINER &

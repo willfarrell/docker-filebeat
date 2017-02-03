@@ -23,6 +23,13 @@ Get ready for the next-generation Logstash Forwarder: Filebeat. Filebeat collect
 
 ## Run Examples
 
+### ENV
+```bash
+HOSTNAME: Server Name
+LOGSTASH_HOST: Recommended name for Logstash Hostname [default=logstash]
+LOGSTASH_PORT: Recommended name for Logstash Port [default=5044]
+```
+
 ### docker-cli
 ```
 docker run \
@@ -58,6 +65,13 @@ services:
 ## stdin
 There is also a wrapper image over the base image provided here that allows piping of docker stdout into filebeat.
 
+### ENV
+```bash
+HOSTNAME: Same as above
+LOGSTASH_HOST: Logstash Hostname [default=logstash]
+LOGSTASH_PORT: Logstash Port [default=5044]
+STDIN_CONTAINER_LABEL: Container label to filter what containers to monitor. Set label to `true` to enable. Set ENV to `all` in ignore labels. [default=filebeat.stdin]
+```
 
 ### docker-cli
 ```
@@ -87,6 +101,7 @@ services:
       HOSTNAME: "my-server"
       LOGSTASH_HOST: "192.168.99.100"
       LOGSTASH_PORT: "5044"
+      STDIN_CONTAINER_LABEL: "all"
     volumes:
      - "./filebeat.yml:/etc/filebeat/filebeat.yml:rw"
      - "/var/run/docker.sock:/tmp/docker.sock:ro"
@@ -123,6 +138,13 @@ filter {
   }
 
 }
+```
+
+### Testing
+```bash
+docker run --label filebeat.stdin=true -d alpine /bin/sh -c 'while true; do echo "Hello $(date)"; sleep 1; done'
+docker build -t filebeat
+docker run -v /var/run/docker.sock:/tmp/docker.sock filebeat
 ```
 
 ## Contributors
