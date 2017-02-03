@@ -124,3 +124,7 @@ filter {
 
 }
 ```
+
+## Contributors
+- @bargenson - main logic for the docker stdin
+- @gdubya - idea to use labels to choose what containers to log

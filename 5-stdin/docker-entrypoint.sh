@@ -14,7 +14,7 @@ if [ "$1" = 'filebeat' ] && [ -e ${DOCKER_SOCK} ]; then
     touch "$CONTAINERS_DIR/$CONTAINER"
     CONTAINER_NAME=$(curl --no-buffer -s -XGET --unix-socket ${DOCKER_SOCK} http://localhost/containers/$CONTAINER/json | jq -r .Name | sed 's@/@@')
     echo "Processing $CONTAINER_NAME ..."
-    #timestamps=1&
+    # cut -c1-8 --complement
     curl --no-buffer -s -XGET --unix-socket ${DOCKER_SOCK} "http://localhost/containers/$CONTAINER/logs?stderr=1&stdout=1&tail=1&follow=1" | tr -d '\000' | sed "s;^[^[:print:]];[$CONTAINER_NAME] ;" > $PIPE_DIR
     echo "Disconnected from $CONTAINER_NAME."
     rm "$CONTAINERS_DIR/$CONTAINER"
@@ -30,6 +30,8 @@ if [ "$1" = 'filebeat' ] && [ -e ${DOCKER_SOCK} ]; then
 
   echo "Monitor Containers ..."
   while true; do
+    # TODO filter what containers get logging
+    # @gdubya | jq -r '.[] | select(.Labels["filebeat.stdin"] == "true") | .Id'
     CONTAINERS=$(curl --no-buffer -s -XGET --unix-socket ${DOCKER_SOCK} http://localhost/containers/json | jq -r .[].Id)
     for CONTAINER in $CONTAINERS; do
       if ! ls $CONTAINERS_DIR | grep -q $CONTAINER; then
