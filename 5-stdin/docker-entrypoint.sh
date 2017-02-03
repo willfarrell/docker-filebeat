@@ -15,7 +15,7 @@ if [ "$1" = 'filebeat' ] && [ -e ${DOCKER_SOCK} ]; then
     CONTAINER_NAME=$(curl --no-buffer -s -XGET --unix-socket ${DOCKER_SOCK} http://localhost/containers/$CONTAINER/json | jq -r .Name | sed 's@/@@')
     echo "Processing $CONTAINER_NAME ..."
     #timestamps=1&
-    curl --no-buffer -s -XGET --unix-socket ${DOCKER_SOCK} "http://localhost/containers/$CONTAINER/logs?stderr=1&stdout=1&tail=1&follow=1" | sed "s;^[^[:print:]][$(echo -nc '\u0000')]*;[$CONTAINER_NAME] ;" > $PIPE_DIR
+    curl --no-buffer -s -XGET --unix-socket ${DOCKER_SOCK} "http://localhost/containers/$CONTAINER/logs?stderr=1&stdout=1&tail=1&follow=1" | tr -d '\000' | sed "s;^[^[:print:]];[$CONTAINER_NAME] ;" > $PIPE_DIR
     echo "Disconnected from $CONTAINER_NAME."
     rm "$CONTAINERS_DIR/$CONTAINER"
   }
