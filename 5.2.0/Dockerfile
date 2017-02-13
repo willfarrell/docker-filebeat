@@ -2,7 +2,7 @@ FROM library/alpine:3.5
 
 ENV FILEBEAT_VERSION=5.2.0 \
     FILEBEAT_SHA1=3108e4d3a6868581f39f30fcea6295c4401635da \
-    GLIBC_VERSION=2.23-r3
+    GLIBC_VERSION=2.25-r0
 
 # Install glibc
 RUN apk add --no-cache --virtual .build-deps ca-certificates wget libgcc \
