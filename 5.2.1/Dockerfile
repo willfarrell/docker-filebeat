@@ -23,4 +23,7 @@ RUN wget -q -O /tmp/filebeat.tar.gz https://artifacts.elastic.co/downloads/beats
     && rm -rf /tmp/filebeat* \
     && apk del .build-deps
 
+HEALTHCHECK --interval=5s --timeout=3s \
+    CMD ps aux | grep '[f]ilebeat' || exit 1
+
 CMD [ "filebeat", "-e", "-c", "/etc/filebeat/filebeat.yml"]
