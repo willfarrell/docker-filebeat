@@ -1,5 +1,7 @@
 # willfarrell/filebeat
 
+**Official Image:** https://github.com/elastic/beats-docker. Note uses `centos:7` as it's base. See [#12](https://github.com/elastic/beats-docker/issues/12)
+
 **Filebeat: Analyze Log Files in Real Time**
 Get ready for the next-generation Logstash Forwarder: Filebeat. Filebeat collects, pre-processes, and forwards log files from remote sources so they can be further enriched and combined with other data sources using Logstash. https://www.elastic.co/products/beats/filebeat
 
