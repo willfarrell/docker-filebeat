@@ -6,7 +6,7 @@
 Get ready for the next-generation Logstash Forwarder: Filebeat. Filebeat collects, pre-processes, and forwards log files from remote sources so they can be further enriched and combined with other data sources using Logstash. https://www.elastic.co/products/beats/filebeat
 
 - [documentation](https://www.elastic.co/guide/en/beats/filebeat/index.html)
-- [sample filebeat.yml](https://github.com/elastic/filebeat/blob/master/etc/filebeat.yml)
+- [sample filebeat.yml](https://github.com/elastic/beats/blob/master/filebeat/filebeat.yml)
 
 ## Supported tags and Dockerfile links
 
