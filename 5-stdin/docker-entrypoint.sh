@@ -26,7 +26,7 @@ if [ "$1" = 'filebeat' ] && [ -e ${DOCKER_SOCK} ]; then
   mkfifo -m a=rw "$PIPE_DIR"
 
   echo "Initializing Filebeat ..."
-  cat $PIPE_DIR | exec "$@" &
+  tail -f $PIPE_DIR | exec "$@" &
 
   echo "Monitor Containers ..."
 
